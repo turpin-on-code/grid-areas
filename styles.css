@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.corner {
+    border: none;
+    border-radius: 10px;
+}
+
+.container {
+    display: grid;
+    background-color: #540b0e;
+    margin: 1.8em auto;
+    max-width: 900px;
+    height: 900px;
+    gap: 1em;
+    grid-template-columns: 1fr repeat(4, 3fr) 1fr;
+    grid-template-rows: 1fr repeat(4, 3fr) 1fr;
+    grid-template-areas:  
+    ". . . . . ."
+    ". left-aside left-aside ra-top ra-top ."
+    ". left-aside left-aside ra-top ra-top ."
+    ". left-aside left-aside rab-left rab-right ."
+    ". left-aside left-aside rab-left rab-right ."
+    ". . . . . .";
+}
+
+.left-aside, .ra-top, .rab-left, .rab-right {
+    background-color: #fff3B0;
+}
+
+.left-aside {
+    grid-area: left-aside;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-areas: 
+    ". ."
+    "card card"
+    "card1 card1"
+    "card2 card2"
+}
+
+.ra-top {
+    grid-area: ra-top;
+    display: grid;
+    gap: 1em;
+    padding: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "article-top article-top"
+        "article-bottom article-bottom2";
+}
+
+.rab-left {
+    grid-area: rab-left;
+    display: grid;
+    gap: 1em;
+    padding: 1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 2fr;
+}
+
+.rab-right {
+    grid-area: rab-right;
+    display: grid;
+    gap: 0.5em;
+    padding: 0.5em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+
+}
+
+.card, .card1, .card2 {
+    background-color: #9e2a2b;
+    margin: 1em;
+    margin-top: 0;
+}
+
+.card {
+    grid-area: card;
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.article-double,
+.article-tiny,
+.article-tiny2,
+.article-tinyb,
+.article-tiny2b,
+.article-tinyc,
+.article-tiny2c,
+.article-top,
+.article-bottom,
+.article-bottom2,
+.article-large,
+.article-small {
+    background-color: #9e2a2b;
+} 
+
+.article-top {
+    grid-area: article-top;
+}
+
+.article-bottom {
+    grid-area: article-bottom;
+}
+
+.article-bottom2 {
+    grid-area: article-bottom2;
+}
+
+.article-double {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+}
+
+.article-tiny {
+    grid-row: 2;
+}
+
+.article-tiny2 {
+    grid-row: 2;
+}
+
+.article-tinyb {
+    grid-row: 3;
+}
+
+.article-tiny2b {
+    grid-row: 3;
+}
+
+.article-tinyc {
+    grid-row: 4;
+}
+
+.article-tiny2c {
+    grid-row: 4;
+}
